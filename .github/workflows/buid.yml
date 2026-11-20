@@ -15,9 +15,6 @@ jobs:
       - name: Baixar projeto
         uses: actions/checkout@v4
 
-      - name: Instalar ferramentas Switch
-        run: dkp-pacman -Sy --noconfirm switch-dev
-
       - name: Compilar NRO
         run: make -C EglantineNX-test-project
 
