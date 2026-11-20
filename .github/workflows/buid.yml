@@ -1,0 +1,28 @@
+name: Build Eglantine NX
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkita64:latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Instalar ferramentas Switch
+        run: dkp-pacman -Sy --noconfirm switch-dev
+
+      - name: Compilar NRO
+        run: make -C EglantineNX-test-project
+
+      - name: Publicar arquivo NRO
+        uses: actions/upload-artifact@v4
+        with:
+          name: EglantineNX-NRO
+          path: EglantineNX-test-project/build/EglantineNX.nro
