@@ -1,0 +1,3 @@
+Este é um protótipo educacional de interface/instalador.
+Não inclui firmware, chaves criptográficas, jogos ou arquivos proprietários.
+Use somente arquivos obtidos legalmente e respeite os direitos dos titulares.
