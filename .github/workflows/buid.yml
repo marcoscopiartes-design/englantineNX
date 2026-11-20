@@ -15,6 +15,11 @@ jobs:
       - name: Baixar projeto
         uses: actions/checkout@v4
 
+      - name: Verificar ferramentas
+        run: |
+          echo "DEVKITPRO=$DEVKITPRO"
+          test -f "$DEVKITPRO/libnx/switch_rules"
+
       - name: Compilar NRO
         run: make -C EglantineNX-test-project
 
